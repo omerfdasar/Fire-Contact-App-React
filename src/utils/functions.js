@@ -1,6 +1,13 @@
 // adding function to data base
 import firebase from "./firebase";
-import { getDatabase, onValue, push, ref, set } from "firebase/database";
+import {
+  getDatabase,
+  onValue,
+  push,
+  ref,
+  remove,
+  set,
+} from "firebase/database";
 import { useEffect, useState } from "react";
 
 // adding info
@@ -36,4 +43,11 @@ export const useFetch = () => {
     });
   }, []);
   return { isLoading, contactList };
+};
+
+// deleting information
+export const DeleteUser = (id) => {
+  const db = getDatabase();
+  const userRef = ref(db, "clientInformation");
+  remove(ref(db, "clientInformation/" + id));
 };
