@@ -2,7 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import FormComponent from "./components/form/FormComponent";
 import Contacts from "./components/contacts/Contacts";
-import { AddUser } from "./utils/functions";
+import { AddUser, EditUser } from "./utils/functions";
 
 const initialValues = { username: "", phoneNumber: "", gender: "NO INFO" };
 
@@ -11,8 +11,15 @@ function App() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log(info);
-    AddUser(info);
+    if (info.id) {
+      EditUser(info);
+    } else {
+      AddUser(info);
+    }
+  };
+
+  const editHandler = (id, username, phoneNumber, gender) => {
+    setInfo({ id, username, phoneNumber, gender });
   };
 
   return (
@@ -22,7 +29,7 @@ function App() {
         setInfo={setInfo}
         handleFormSubmit={handleFormSubmit}
       />
-      <Contacts />
+      <Contacts editHandler={editHandler} />
     </div>
   );
 }

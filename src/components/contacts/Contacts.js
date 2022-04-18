@@ -9,11 +9,11 @@ import {
   rows,
   Paper,
 } from "@mui/material";
-import { DeleteUser, useFetch } from "../../utils/functions";
+import { DeleteUser, EditUser, useFetch } from "../../utils/functions";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 
-const Contacts = () => {
+const Contacts = ({ editHandler }) => {
   const { isLoading, contactList } = useFetch();
   return (
     <div>
@@ -52,15 +52,30 @@ const Contacts = () => {
                 return (
                   <TableRow key={index}>
                     <TableCell textalign="center">
-                      {item.username.toUpperCase()}
+                      {item?.username?.toUpperCase()}
                     </TableCell>
-                    <TableCell textalign="center">{item.phoneNumber}</TableCell>
-                    <TableCell textalign="center">{item.gender}</TableCell>
+                    <TableCell textalign="center">
+                      {item?.phoneNumber}
+                    </TableCell>
+                    <TableCell textalign="center">{item?.gender}</TableCell>
                     <TableCell
                       textalign="center"
                       onClick={() => DeleteUser(item.id)}
                     >
                       <DeleteIcon />
+                    </TableCell>
+                    <TableCell
+                      textalign="center"
+                      onClick={() =>
+                        editHandler(
+                          item.id,
+                          item.username,
+                          item.phoneNumber,
+                          item.gender
+                        )
+                      }
+                    >
+                      <EditIcon />
                     </TableCell>
                   </TableRow>
                 );
