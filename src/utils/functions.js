@@ -10,6 +10,7 @@ import {
   update,
 } from "firebase/database";
 import { useEffect, useState } from "react";
+import Toastify from "./toast";
 
 // adding info
 export const AddUser = (info) => {
@@ -21,6 +22,7 @@ export const AddUser = (info) => {
     phoneNumber: info.phoneNumber,
     gender: info.gender,
   });
+  Toastify("User has been added");
 };
 
 export const useFetch = () => {
@@ -51,10 +53,10 @@ export const DeleteUser = (id) => {
   const db = getDatabase();
   const userRef = ref(db, "clientInformation");
   remove(ref(db, "clientInformation/" + id));
+  Toastify("User has been deleted");
 };
+
 // editing
-
-
 export const EditUser = (info) => {
   const db = getDatabase();
   const updates = {};
@@ -62,13 +64,3 @@ export const EditUser = (info) => {
   updates["clientInformation/" + info.id] = info;
   return update(ref(db), updates);
 };
-
-
-// export const EditUser = (info) => {
-//     const db = getDatabase();
-//     const updates = {};
-  
-//     updates["baglanti/" + info.id] = info;
-//     return update(ref(db), updates);
-//   };
-  

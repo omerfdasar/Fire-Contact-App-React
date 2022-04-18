@@ -20,7 +20,7 @@ const FormComponent = ({ info, setInfo, handleFormSubmit }) => {
     // const name=e.target.name
     // const value=e.target.value
     const { name, value } = e.target;
-    console.log(name, value);
+  
     setInfo({ ...info, [name]: value });
   };
 
