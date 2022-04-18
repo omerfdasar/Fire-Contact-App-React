@@ -29,8 +29,6 @@ const Contacts = () => {
           </TableHead>
 
           <TableBody>
-            {/* Bilgiler gelmediği durumda Loading yazısı görünsün */}
-
             <TableRow
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
@@ -38,9 +36,6 @@ const Contacts = () => {
                 Loading
               </TableCell>
             </TableRow>
-
-            {/* Bilgiler olmadığı,boş olduğu  durumda veri bulunamadı mesajı*/}
-            {/* Bilgiler geldiği zaman aşağıya yazılacak kodlar çalışsın */}
           </TableBody>
         </Table>
       </TableContainer>

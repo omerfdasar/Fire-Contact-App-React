@@ -14,25 +14,19 @@ import {
 import { AccountCircle } from "@mui/icons-material";
 import PhoneEnabledIcon from "@mui/icons-material/PhoneEnabled";
 
-const FormComponent = ({info,setInfo}) => {
-  const handleChange=(e)=>{
+const FormComponent = ({ info, setInfo, handleFormSubmit }) => {
+  const handleChange = (e) => {
     e.preventDefault();
-    // const name=e.target.name 
-    // const value=e.target.value 
-    const {name,value}=e.target
-    console.log(name,value)
-    setInfo({...info,[name]:value})
-  }
-
+    // const name=e.target.name
+    // const value=e.target.value
+    const { name, value } = e.target;
+    console.log(name, value);
+    setInfo({ ...info, [name]: value });
+  };
 
   return (
-    <Grid
-      textAlign="center"
-      verticalAlign="middle"
-      direction="column"
-      style={{ width: "300" }}
-    >
-      <p className="contact-header">
+    <Grid textAlign="center" verticalalign="middle" style={{ width: "300" }}>
+      <div className="contact-header">
         <div>
           <a
             href="https://github.com/clarusway"
@@ -44,11 +38,11 @@ const FormComponent = ({info,setInfo}) => {
           </a>
         </div>
         <span className="design header">design</span>
-      </p>
+      </div>
       <h2 className="contact-header">Add Contact</h2>
-    
+
       <Box style={{ backgroundColor: "white", padding: "20px" }}>
-        <form >
+        <form onSubmit={handleFormSubmit}>
           <Stack spacing={3} direction="column">
             <TextField
               variant="outlined"

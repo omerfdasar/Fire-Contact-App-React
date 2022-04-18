@@ -5,17 +5,16 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDLrVwmFC7JBO4X1Ic1B1NZUzdbpme0ObM",
-  authDomain: "fire-contact-base-project.firebaseapp.com",
-  databaseURL: "https://fire-contact-base-project-default-rtdb.firebaseio.com",
-  projectId: "fire-contact-base-project",
-  storageBucket: "fire-contact-base-project.appspot.com",
-  messagingSenderId: "805121415965",
-  appId: "1:805121415965:web:926e1a4a2eab9d82d95ff4"
+  apiKey: "AIzaSyAxlKr_GIM7xCZadcHxslUs4oPVWbii_ms",
+  authDomain: "fir-contact-app-95b1f.firebaseapp.com",
+  databaseURL: "https://fir-contact-app-95b1f-default-rtdb.firebaseio.com",
+  projectId: "fir-contact-app-95b1f",
+  storageBucket: "fir-contact-app-95b1f.appspot.com",
+  messagingSenderId: "719650263815",
+  appId: "1:719650263815:web:7edd49554526d46a856ba2",
 };
 
 // Initialize Firebase
 const firebase = initializeApp(firebaseConfig);
 
 export default firebase;
-
