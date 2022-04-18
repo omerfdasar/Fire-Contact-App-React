@@ -20,7 +20,7 @@ const FormComponent = ({ info, setInfo, handleFormSubmit }) => {
     // const name=e.target.name
     // const value=e.target.value
     const { name, value } = e.target;
-  
+
     setInfo({ ...info, [name]: value });
   };
 
@@ -29,12 +29,12 @@ const FormComponent = ({ info, setInfo, handleFormSubmit }) => {
       <div className="contact-header">
         <div>
           <a
-            href="https://github.com/clarusway"
+            href="https://github.com/omerfdasar"
             className="design"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <code>{"<Clarusway/> "}</code>
+            <code>{"<Omer/> "}</code>
           </a>
         </div>
         <span className="design header">design</span>
